@@ -391,7 +391,7 @@ export default function IndexPage() {
         ? `Halo Marrintis! I am interested in the [${selectedPkg}] package with the [${selectedTheme.name.en}] style theme. My name is: `
         : `Halo Marrintis! Saya tertarik dengan paket [${selectedPkg}] dengan tema gaya [${selectedTheme.name.id}]. Nama saya: `;
 
-    return `https://wa.me/628123456789?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/6282246034453?text=${encodeURIComponent(text)}`;
   };
 
   return (
@@ -863,7 +863,7 @@ export default function IndexPage() {
                     {copy.contactWhatsApp}
                   </p>
                   <p className="font-semibold text-stone-800">
-                    +62 812 3456 6789
+                    +62 822-4603-4453
                   </p>
                 </div>
               </div>

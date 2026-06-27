@@ -50,7 +50,7 @@ export default function KonsultasiPage() {
             as={Link}
             className="rounded-full bg-[#C05C3E] text-white px-6 font-medium"
             endContent={<PhoneCall className="h-4 w-4" />}
-            href="https://wa.me/628123456789"
+            href="https://wa.me/6282246034453"
           >
             WhatsApp
           </Button>
