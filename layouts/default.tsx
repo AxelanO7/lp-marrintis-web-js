@@ -8,7 +8,7 @@ export default function DefaultLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="relative min-h-screen flex flex-col bg-[#FAFAF9] text-neutral-900">
+    <div className="relative min-h-screen flex flex-col bg-[#FAF8F5] text-stone-900 selection:bg-[#E29545]/20 font-sans">
       <Head />
       <Navbar />
       <main className="relative flex-1 overflow-hidden">{children}</main>

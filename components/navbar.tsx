@@ -43,14 +43,16 @@ export const Navbar = () => {
   return (
     <HeroUINavbar
       isBordered
-      className="backdrop-blur-xl bg-white/70 text-neutral-900"
+      className="backdrop-blur-xl bg-white/70 text-stone-900 border-stone-200/50"
       maxWidth="xl"
     >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand className="gap-3 max-w-fit font-semibold uppercase tracking-wide">
-          <NextLink className="flex justify-start items-center gap-2" href="#">
-            <span className="h-8 w-8 rounded-full bg-blue-600 shadow-lg shadow-blue-200" />
-            <p className="font-semibold text-lg">Marrintis Studio</p>
+          <NextLink className="flex justify-start items-center gap-2" href="/">
+            <span className="h-8 w-8 rounded-full bg-[#C05C3E] shadow-md" />
+            <p className="font-serif font-bold text-lg text-[#243E36] tracking-tight">
+              Marrintis Studio
+            </p>
           </NextLink>
         </NavbarBrand>
         <div className="hidden lg:flex gap-6 justify-start ml-6 text-sm">
@@ -58,7 +60,7 @@ export const Navbar = () => {
             <NavbarItem key={item.href}>
               <Link
                 as={NextLink}
-                className="text-neutral-700 transition-colors hover:text-blue-600"
+                className="text-stone-700 transition-colors hover:text-[#C05C3E]"
                 color="foreground"
                 href={item.href}
               >
@@ -75,7 +77,7 @@ export const Navbar = () => {
       >
         <NavbarItem className="flex items-center gap-2">
           <Button
-            className="min-w-[40px] h-9 rounded-full border border-neutral-200 bg-white/80 text-xs font-medium"
+            className="min-w-[40px] h-9 rounded-full border border-stone-200 bg-white/80 text-xs font-medium text-stone-850"
             radius="full"
             variant="bordered"
             onPress={toggleLanguage}
@@ -83,9 +85,9 @@ export const Navbar = () => {
             {language === "en" ? "EN / ID" : "ID / EN"}
           </Button>
           <Button
-            as={Link}
-            className="rounded-full bg-blue-600 text-white px-5 text-sm font-medium shadow-lg shadow-blue-200 hover:-translate-y-[1px] transition"
-            href="https://wa.me/628123456789"
+            as={NextLink}
+            className="rounded-full bg-[#243E36] text-white px-5 text-sm font-medium hover:-translate-y-[1px] transition"
+            href="/konsultasi"
             radius="full"
           >
             {ctaLabel}
@@ -97,13 +99,13 @@ export const Navbar = () => {
         <NavbarMenuToggle />
       </NavbarContent>
 
-      <NavbarMenu className="bg-white/90 backdrop-blur-xl">
+      <NavbarMenu className="bg-white/95 backdrop-blur-xl">
         <div className="mx-4 mt-4 flex flex-col gap-3">
           {activeNavItems.map((item) => (
             <NavbarMenuItem key={item.href}>
               <Link
                 as={NextLink}
-                className="text-lg text-neutral-800"
+                className="text-lg text-stone-800"
                 href={item.href}
               >
                 {item.label}
@@ -112,7 +114,7 @@ export const Navbar = () => {
           ))}
           <NavbarMenuItem className="flex gap-2">
             <Button
-              className="rounded-full border border-neutral-200 bg-white/80 text-sm"
+              className="rounded-full border border-stone-200 bg-white/80 text-sm"
               radius="full"
               variant="bordered"
               onPress={toggleLanguage}
@@ -120,9 +122,9 @@ export const Navbar = () => {
               {language === "en" ? "EN / ID" : "ID / EN"}
             </Button>
             <Button
-              as={Link}
-              className="rounded-full bg-blue-600 text-white w-full"
-              href="https://wa.me/628123456789"
+              as={NextLink}
+              className="rounded-full bg-[#243E36] text-white w-full"
+              href="/konsultasi"
               radius="full"
             >
               {ctaLabel}

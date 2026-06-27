@@ -2,13 +2,21 @@
 
 @config "../tailwind.config.js";
 
+:root {
+  --color-bg-warm: #FAF8F5;
+  --color-primary-green: #243E36;
+  --color-secondary-terracotta: #C05C3E;
+  --color-accent-amber: #E29545;
+}
+
 @layer utilities {
   .glass-panel {
-    @apply bg-white/70 backdrop-blur-2xl border border-white/50 shadow-[0_20px_80px_-40px_rgba(15,23,42,0.45)] rounded-3xl;
+    @apply bg-white/60 backdrop-blur-md border border-stone-200/60 shadow-[0_15px_50px_-25px_rgba(36,62,54,0.15)] rounded-3xl;
   }
 
   .gradient-blob {
-    @apply absolute w-[320px] h-[320px] blur-3xl rounded-full opacity-70;
+    /* Optimasi performance: ganti opacity lebih rendah dan will-change */
+    @apply absolute w-[280px] h-[280px] blur-3xl rounded-full opacity-40 will-change-transform;
   }
 
   .animate-float {
