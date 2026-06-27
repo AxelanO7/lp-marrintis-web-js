@@ -65,7 +65,7 @@ export default function DocsPage() {
             title: "3. Peluncuran & Serah Terima",
             points: [
               "Kami membangun web Next.js responsif yang dioptimasi untuk SEO dan kecepatan load.",
-              "Kami membantu pembelian domain (.id/.com) dan konfigurasi email custom (Zoho Mail).",
+              "Kami membantu pembelian domain (.my.id atau .site) dan konfigurasi email custom (Zoho Mail).",
               "Website di-deploy ke Vercel (Hobby) atau Coolify VPS dengan sertifikat SSL gratis.",
             ],
           },

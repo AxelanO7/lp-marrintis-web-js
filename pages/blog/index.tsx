@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { Card } from "@heroui/card";
-import { Link } from "@heroui/link";
+import { Button } from "@heroui/button";
 
 import { useLanguage } from "@/config/language-context";
 import DefaultLayout from "@/layouts/default";
@@ -14,6 +15,7 @@ type Post = {
 
 export default function BlogPage() {
   const { language } = useLanguage();
+  const [showModal, setShowModal] = useState(false);
 
   const title = language === "en" ? "Marrintis Insights" : "Catatan Marrintis";
   const desc =
@@ -97,13 +99,13 @@ export default function BlogPage() {
                   <span className="text-stone-500">{post.date}</span>
                 </div>
                 <h3 className="text-lg md:text-xl font-serif font-bold text-[#243E36] mt-1 hover:text-[#C05C3E]">
-                  <Link
-                    className="text-inherit flex items-center gap-1.5"
-                    href="#"
+                  <button
+                    className="text-left flex items-center gap-1.5 focus:outline-none"
+                    onClick={() => setShowModal(true)}
                   >
                     {post.title}
                     <ArrowUpRight className="h-4 w-4 shrink-0" />
-                  </Link>
+                  </button>
                 </h3>
                 <p className="text-stone-650 text-xs md:text-sm leading-relaxed mt-1">
                   {post.excerpt}
@@ -112,6 +114,46 @@ export default function BlogPage() {
             </Card>
           ))}
         </div>
+
+        {/* Coming Soon Modal */}
+        {showModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-stone-900/60 backdrop-blur-sm p-4 animate-fade-in">
+            <Card className="max-w-md w-full p-6 border border-stone-200/60 bg-white shadow-xl flex flex-col items-center text-center space-y-4">
+              <div className="h-12 w-12 rounded-full bg-[#C05C3E]/10 text-[#C05C3E] flex items-center justify-center">
+                <svg
+                  className="h-6 w-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                  />
+                </svg>
+              </div>
+              <h3 className="text-lg font-serif font-bold text-[#243E36]">
+                {language === "en"
+                  ? "Article Coming Soon"
+                  : "Artikel Segera Hadir"}
+              </h3>
+              <p className="text-stone-600 text-xs md:text-sm">
+                {language === "en"
+                  ? "We are currently drafting this article. Check back shortly or subscribe to our newsletter via contact channels."
+                  : "Kami sedang menyusun artikel ini. Silakan cek kembali dalam waktu dekat."}
+              </p>
+              <Button
+                className="rounded-full bg-[#243E36] text-white px-6 py-2 text-xs font-semibold"
+                onClick={() => setShowModal(false)}
+              >
+                {language === "en" ? "Close" : "Tutup"}
+              </Button>
+            </Card>
+          </div>
+        )}
       </section>
     </DefaultLayout>
   );
