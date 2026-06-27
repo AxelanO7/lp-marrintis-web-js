@@ -49,7 +49,22 @@ export const Navbar = () => {
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand className="gap-3 max-w-fit font-semibold uppercase tracking-wide">
           <NextLink className="flex justify-start items-center gap-2" href="/">
-            <span className="h-8 w-8 rounded-full bg-[#C05C3E] shadow-md" />
+            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-stone-200/60 bg-white text-[#C05C3E] shadow-sm ring-4 ring-stone-100/50 mr-1 shrink-0">
+              <svg
+                className="h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707.707M12 5a7 7 0 100 14 7 7 0 000-14z"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.8}
+                />
+              </svg>
+            </span>
             <p className="font-serif font-bold text-lg text-[#243E36] tracking-tight">
               Marrintis Studio
             </p>

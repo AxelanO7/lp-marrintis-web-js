@@ -99,7 +99,7 @@ const content: Record<"en" | "id", PageCopy> = {
     cardFocusValue: "Digital Ecosystems",
     cardBasedInLabel: "Based in",
     cardBasedInValue: "Remote • SEA",
-    cardOpenLabel: "Open for 2025",
+    cardOpenLabel: "Open for 2026",
     engagement: "Engagement",
     delivery: "Delivery",
     whyTitle: "Why Partner with Us",
@@ -155,33 +155,21 @@ const content: Record<"en" | "id", PageCopy> = {
         deliverables: [
           "Logo, color, and typography fundamentals",
           "One-page website with conversion tracking",
-          "Launch checklist and analytics setup",
+          "Domain (.my.id or .site) + custom email setup",
         ],
         accent: "from-amber-50 to-orange-100/50",
         price: "Rp 1.500.000 - 2.500.000",
       },
       {
-        title: "FLOW",
-        badge: "Systems for growing teams",
-        description:
-          "Multi-page corporate site, content engine, and social presence to keep communication consistent.",
-        deliverables: [
-          "Website with CMS & performance tuning",
-          "Social media visual toolkit",
-          "Editorial calendar & governance guidance",
-        ],
-        accent: "from-stone-100 to-stone-200/50",
-        price: "Rp 3.500.000 - 6.000.000",
-      },
-      {
         title: "SCALE",
-        badge: "Expansion for institutions",
+        badge: "Full ecosystem for serious ventures",
         description:
-          "Custom digital ecosystems and rebranding programs for enterprises ready to transform or relaunch.",
+          "Custom digital ecosystems, multi-page websites, and full social media management for enterprises ready to grow.",
         deliverables: [
-          "Design system for product & marketing",
-          "Custom web/app development & integrations",
-          "Experimentation roadmap & optimization",
+          "Everything in INIT",
+          "Multi-page website with CMS & performance tuning",
+          "Social media visual kit + 1 month management",
+          "Custom web/app development & design system",
         ],
         accent: "from-emerald-50 to-[#243E36]/10",
         price: "Rp 8.000.000 - 20.000.000",
@@ -223,7 +211,7 @@ const content: Record<"en" | "id", PageCopy> = {
     cardFocusValue: "Ekosistem Digital",
     cardBasedInLabel: "Berbasis di",
     cardBasedInValue: "Remote • Asia Tenggara",
-    cardOpenLabel: "Terbuka untuk 2025",
+    cardOpenLabel: "Terbuka untuk 2026",
     engagement: "Pendekatan",
     delivery: "Delivery",
     whyTitle: "Alasan brand memilih kami",
@@ -279,33 +267,21 @@ const content: Record<"en" | "id", PageCopy> = {
         deliverables: [
           "Logo, warna, dan tipografi dasar",
           "Situs satu halaman dengan pelacakan konversi",
-          "Checklist peluncuran dan setelan analitik",
+          "Domain (.my.id atau .site) + setup email kustom",
         ],
         accent: "from-amber-50 to-orange-100/50",
         price: "Rp 1.500.000 - 2.500.000",
       },
       {
-        title: "FLOW",
-        badge: "Sistem untuk tim yang bertumbuh",
-        description:
-          "Situs korporat multi-halaman, mesin konten, dan kehadiran sosial yang konsisten.",
-        deliverables: [
-          "Website dengan CMS & optimasi performa",
-          "Toolkit visual media sosial",
-          "Kalender editorial & panduan governance",
-        ],
-        accent: "from-stone-100 to-stone-200/50",
-        price: "Rp 3.500.000 - 6.000.000",
-      },
-      {
         title: "SCALE",
-        badge: "Ekspansi untuk institusi",
+        badge: "Ekosistem penuh untuk bisnis serius",
         description:
-          "Ekosistem digital kustom dan program rebranding untuk enterprise yang siap transformasi atau relaunch.",
+          "Ekosistem digital kustom, website multi-halaman, dan pengelolaan sosial media penuh untuk bisnis yang siap tumbuh.",
         deliverables: [
-          "Design system untuk produk & marketing",
-          "Pengembangan web/app kustom & integrasi",
-          "Roadmap eksperimen & optimasi",
+          "Semua yang ada di paket INIT",
+          "Website multi-halaman dengan CMS & optimasi performa",
+          "Visual kit sosial media + 1 bulan pengelolaan",
+          "Pengembangan web/app kustom & design system",
         ],
         accent: "from-emerald-50 to-[#243E36]/10",
         price: "Rp 8.000.000 - 20.000.000",
@@ -604,7 +580,7 @@ export default function IndexPage() {
                       {copy.pickerPkgLabel}
                     </label>
                     <div className="flex gap-2">
-                      {["INIT", "FLOW", "SCALE"].map((pkg) => (
+                      {["INIT", "SCALE"].map((pkg) => (
                         <button
                           key={pkg}
                           className={`flex-1 py-2 px-3 rounded-lg border text-center text-xs font-semibold transition-all ${
@@ -798,7 +774,7 @@ export default function IndexPage() {
                 Tailored per engagement
               </Chip>
             </div>
-            <div className="grid gap-6 md:grid-cols-3">
+            <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
               {copy.solutions.map((solution) => (
                 <Card
                   key={solution.title}
